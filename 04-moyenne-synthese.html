@@ -73,20 +73,40 @@
      * Retour : la moyenne calculée
      */
 
-    function average() {
-        // CODE HERE !
+    function average(array) {
+        let totalNotes = 0;
 
-    }
+        array.forEach(note => {
+            totalNotes += note;
+        });
+
+        return (totalNotes / array.length).toFixed(2);
+    };
+
     /*
      * Fonction appelée lors du 'clic' sur le bouton
+     * Récupère la note si il y en a une dans l'input, vérifie qu'elle soit entre 0 et 20
+     * Puis l'ajoute au tableau et calcule la moyenne en appelant la fonction average
+     * Si il n'y a aucune note dans l'input, alors on calcule la moyenne des notes du tableau "notes"
      * Parameters: 
      * Return:
      */
 
     function refreshAverage() {
-        // CODE HERE !
+        const newNote = parseInt(document.getElementById("note").value);
 
-    }
+        if (newNote < 0 || newNote > 20) {
+            alert("Note invalide");
+            return;
+        };
+
+        if (newNote) {
+            notes.push(newNote);
+            alert(average(notes));
+        } else {
+            alert(average(notes));
+        };
+    };
 
 </script>
 </body>
