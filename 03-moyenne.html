@@ -42,14 +42,32 @@
     const notes = [8.75, 14, 13, 5.5, 9, 17, 11.25];
 
     /*
-     * Ici le commentaire sur la fonction average...
+     * Parametre: Tableau des notes dont il faut calculer la moyenne
+     * Le forEach / for ... in calcule le total des notes en ajoutant la note de l'itération 
+     * à la variable "totalNotes" que l'on a initialisé au début de la fonction
      */
 
-    function average(noteArray) {
-        // CODE HERE !
-        
-    }
+    let monTableau = [1, 10, 100, 1000]
 
+    monTableau.forEach(element => {
+        element += 1
+        console.log(element)
+    })
+
+    function average(notes) {
+        let totalNotes = 0;
+
+        // notes.forEach(note => {
+        //     totalNotes += note;
+        // });
+
+        for (const note of notes) {
+            totalNotes += note;
+        };
+
+        const moyenne = (totalNotes / notes.length).toFixed(2);
+        console.log("La moyenne est notes est: ", moyenne);
+    };
 
 </script>
 </body>
