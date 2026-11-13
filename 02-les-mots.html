@@ -58,6 +58,7 @@
 
         /* On sépare la chaine de caractères en sous chaine avec split. */
         /* Le séparateur est le regex qu'on a mis en parametre */
+        /* Puis la methode filter(Boolean) supprimes les éléments vides (qui valent false) */
         const sentenceWords = sentence.split(/[^a-zA-Z\d]+/g)
                                       .filter(Boolean);
 
