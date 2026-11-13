@@ -55,8 +55,18 @@
 <script type="text/javascript">
 
     function analyze() {
-        // CODE HERE !
-    }
+        const sentence = document.getElementById("sentence").value;
+        /* Stoppe la fonction sur la phrase fait moins de 5 characteres */
+        if (sentence.length < 5) return;
+
+        /* String.substr - Param 1 = Indice de début / Param 2 = Nombre de chars à utiliser */
+        const fifthChar = sentence.substr(4, 1);
+        const threeFirstChars = sentence.substr(0, 3);
+        const threeLastChars = sentence.substr(sentence.length - 3, 3);
+        const sentenceAnalyze = [sentence.length, fifthChar, threeFirstChars, threeLastChars];
+
+        alert(`Nombre de caractères: ${sentenceAnalyze[0]} \n5eme caractères: ${sentenceAnalyze[1]} \n3 premiers caractères: ${sentenceAnalyze[2]} \n3 derniers caractères: ${sentenceAnalyze[3]}`);
+    };
 
 </script>
 </body>
