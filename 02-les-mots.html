@@ -54,7 +54,14 @@
 <script type="text/javascript">
 
     function countWords() {
-        // CODE HERE ! 
+        const sentence = document.getElementById("sentence").value;
+
+        /* On sépare la chaine de caractères en sous chaine avec split. */
+        /* Le séparateur est le regex qu'on a mis en parametre */
+        const sentenceWords = sentence.split(/[^a-zA-Z\d]+/g)
+                                      .filter(Boolean);
+
+        alert(sentenceWords.length);
     }
 
 </script>
