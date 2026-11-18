@@ -45,10 +45,21 @@
 <script type="text/javascript">
 
     function draw() {
-
-        // CODE HERE !
+        const pyramidSize = parseInt(document.getElementById("height").value);
         
-    }
+        for (let i = 1; i <= pyramidSize; i++) {
+            // Variable qui sera mise a jour puis console log
+            let pyramidRow = i;
+
+            // Boucle qui concatène le nombre n, n fois en tout.
+            for (let n = 1; n < i; n++) {
+                // Mise a jour de la variable du console log
+                pyramidRow += ` ${i}`;
+            };
+
+            console.log(pyramidRow);
+        };
+    };
 
 </script>
 </body>
